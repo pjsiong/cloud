@@ -33,6 +33,12 @@ variable "location" {
   default = "eastasia"
 }
 
+variable "tenant_id" {
+  default = ""
+}
+
+
+
 
 resource "azurerm_virtual_network" "main" {
   name                = "${var.prefix}-network"
