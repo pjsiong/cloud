@@ -1,3 +1,34 @@
+locals {
+  prefix = "AZU-R-Sandbox_"
+}
+
+
+#variable "prefix" {
+#  default = "AZU-R-Sandbox_"
+#}
+
+variable "resource_group" {
+  default = "AZU-R-Sandbox_Terraform"
+}
+
+variable "location" {
+  default = "eastasia"
+}
+
+variable "tenant_id" {
+  default = ""
+}
+variable "subscription_id" {
+  default = ""
+}
+variable "client_id" {
+  default = ""
+}
+variable "client_secret" {
+  default = ""
+}
+
+
 resource "azurerm_virtual_machine" "main" {
   name                  = "${local.prefix}-vm"
   location            = var.location
