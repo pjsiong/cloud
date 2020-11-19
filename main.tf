@@ -54,7 +54,7 @@ variable "client_secret" {
 
 
 resource "azurerm_virtual_network" "main" {
-  name                = "${var.prefix}-network"
+  name                = "${local.prefix}-network"
   address_space       = ["10.0.0.0/16"]
   location            = var.location
   resource_group_name = var.resource_group
@@ -68,7 +68,7 @@ resource "azurerm_subnet" "internal" {
 }
 
 resource "azurerm_network_interface" "main" {
-  name                = "${var.prefix}-nic"
+  name                = "${local.prefix}-nic"
   location            = var.location
   resource_group_name = var.resource_group
 
